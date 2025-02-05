@@ -179,7 +179,7 @@ static qboolean readBindings(load_context_t *ctx, VkDescriptorSetLayoutBinding *
 		goto finalize;
 	}
 
-	pass->resource_map = Mem_Malloc(vk_core.pool, sizeof(int) * count);
+	pass->resource_map = count ? Mem_Malloc(vk_core.pool, sizeof(pass->resource_map[0]) * count) : NULL;
 
 	for (int i = 0; i < count; ++i) {
 		const uint32_t header = READ_U32("Couldn't read header for binding %d", i);
