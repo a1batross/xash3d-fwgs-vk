@@ -11,10 +11,10 @@ def options(opt):
 	grp = opt.add_option_group('ref_vk options')
 
 	grp.add_option('--disable-vulkan', action='store_false', dest='VK', default=True,
-		help = 'disable vulkan [default: %default]')
+		help = 'disable vulkan [default: %(default)s]')
 
 	grp.add_option('--aftermath', action='store', dest = 'NSIGHT_AFTERMATH_SDK', default = None,
-		help = 'path to Nvidia Nsight Aftermath SDK (optional) [default: %default]')
+		help = 'path to Nvidia Nsight Aftermath SDK (optional) [default: %(default)s]')
 
 def configure(conf):
 	# check for dedicated server build
